@@ -1,0 +1,20 @@
+#!/bin/bash
+echo "entere le nom de fishier : "
+read file
+echo "voulez-vous compiler le fishier $file ! (o/n)"
+read rep
+if [ "$rep" == "o" ]
+then 
+gcc $file -o programme
+if [ $? -eq 0 ]
+then echo "compilation done voulez-vous de l'execute ?(o/n)"
+read rep1
+if [ "$rep1" == "o" ]
+then ./programme
+else
+echo "fin"
+fi
+else
+echo "error de compilation"
+fi
+else
